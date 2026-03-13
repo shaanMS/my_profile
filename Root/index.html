@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shaan Mohammad Siddiqui | Backend & AI Developer</title>
+  <meta name="description" content="Full-Stack & AI Backend Developer | FastAPI, Django, RAG, pgvector, LLM integration | India"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --primary: #0a66c2;
+      --dark: #1e293b;
+      --light: #f8fafc;
+      --gray: #64748b;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    header {
+      background: linear-gradient(135deg, var(--primary), #1e40af);
+      color: white;
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+    header h1 { font-size: 3rem; margin-bottom: 8px; }
+    header p { font-size: 1.3rem; opacity: 0.9; }
+    .social-links a {
+      color: white;
+      font-size: 1.8rem;
+      margin: 0 12px;
+      transition: 0.3s;
+    }
+    .social-links a:hover { transform: scale(1.2); opacity: 0.8; }
+    section { padding: 60px 0; }
+    h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      color: var(--primary);
+      position: relative;
+    }
+    h2::after {
+      content: '';
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .skills-grid, .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+    .skill-card, .project-card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+    .skill-card:hover, .project-card:hover { transform: translateY(-8px); }
+    .project-card h3 { color: var(--primary); margin-bottom: 12px; }
+    .project-card a { color: var(--primary); font-weight: bold; text-decoration: none; }
+    .project-card a:hover { text-decoration: underline; }
+    .experience-item { margin-bottom: 30px; }
+    .experience-item h3 { color: var(--primary); }
+    .experience-item span { color: var(--gray); font-style: italic; }
+    .resume-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+    .resume-btn:hover { background: #0845a1; transform: translateY(-3px); }
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 60px;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.4rem; }
+      header { padding: 60px 0 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Header -->
+  <header>
+    <div class="container">
+      <h1>Shaan Mohammad Siddiqui</h1>
+      <p>Backend & AI Developer | FastAPI • Django • RAG • pgvector • LLM Integration</p>
+      <div class="social-links" style="margin-top:20px;">
+        <a href="https://www.linkedin.com/in/shaan-mohammad-siddiqui-b98aab260" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/shaanMS" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:shaanmohammad2525@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Summary & Skills -->
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p style="max-width:800px; margin:0 auto 40px; text-align:center;">
+        Results-oriented developer with hands-on experience in building scalable backend systems and AI-enhanced search applications. 
+        Passionate about modern Python stacks, vector databases, RAG pipelines, and secure architectures. Currently focused on production-grade 
+        APIs and intelligent search solutions for real-world use cases (e-commerce, real-estate, etc.).
+      </p>
+
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Languages</h3>
+          <p>Python (Advanced), Java, JavaScript (Basic), SQL</p>
+        </div>
+        <div class="skill-card">
+          <h3>Frameworks</h3>
+          <p>FastAPI (async APIs, Pydantic), Django</p>
+        </div>
+        <div class="skill-card">
+          <h3>Databases</h3>
+          <p>PostgreSQL (pgvector, FTS, concurrency, transactions, indexing, views & MV, EXPLAIN ANALYZE, multitenant, DB design, normalization, ERD, ACID, JSON/JSONB), Qdrant, MongoDB</p>
+        </div>
+        <div class="skill-card">
+          <h3>AI / Search</h3>
+          <p>RAG pipelines, Vector Embeddings, Semantic Search, LangChain, LLM integration, Hugging Face</p>
+        </div>
+        <div class="skill-card">
+          <h3>Security</h3>
+          <p>JWT/OAuth, OWASP Top 10, Rate Limiting, CSRF, Request Tracking, Custom Middlewares, Headers Security</p>
+        </div>
+        <div class="skill-card">
+          <h3>Tools & DevOps</h3>
+          <p>Git, Docker basics, KeyDB (caching), Celery, Railway, CI/CD</p>
+        </div>
+        <div class="skill-card">
+          <h3>Concepts</h3>
+          <p>System Design, Async Programming, Microservices, REST Architecture</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" style="background:#f8fafc;">
+    <div class="container">
+      <h2>Experience</h2>
+      <div class="experience-item">
+        <h3>Java Software Developer Intern</h3>
+        <p><strong>Analyze Infotech Pvt Ltd</strong> • Oct 2021 – Dec 2021</p>
+        <ul>
+          <li>Built RESTful backend services using Java + Spring Boot</li>
+          <li>Implemented CRUD operations, data processing, and file handling</li>
+        </ul>
+      </div>
+      <div class="experience-item">
+        <h3>Cybersecurity Instructor</h3>
+        <p><strong>RR Group of Institutions</strong> • Aug 2024 – Dec 2024</p>
+        <ul>
+          <li>Trained 100+ students on OWASP Top 10, secure coding practices, and JWT authentication</li>
+          <li>Created hands-on labs integrating security in Python/Django applications</li>
+        </ul>
+      </div>
+      <div class="experience-item">
+        <h3>Backend & AI Upskilling Period</h3>
+        <p><strong>Self-Directed</strong> • Jan 2025 – Feb 2026</p>
+        <ul>
+          <li>Mastered FastAPI, RAG pipelines, pgvector vector search, LLM integration, advanced PostgreSQL, and system design</li>
+          <li>Built 10+ production-grade projects on GitHub (see below)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <h2>Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>renting.ai – AI Semantic Rental Search</h3>
+          <p><a href="https://github.com/shaanMS/renting.ai" target="_blank">github.com/shaanMS/renting.ai</a></p>
+          <ul>
+            <li>RAG-based natural language property search with vector embeddings & hybrid retrieval</li>
+            <li>FastAPI backend + Qdrant vector DB + LangChain + LLM integration</li>
+            <li>ETL pipeline for Indian real-estate data</li>
+          </ul>
+        </div>
+        <div class="project-card">
+          <h3>Hungrio – Full Food Ordering Backend</h3>
+          <p><a href="https://github.com/shaanMS/Hungrio" target="_blank">github.com/shaanMS/Hungrio</a></p>
+          <ul>
+            <li>Complete backend: catalog, cart, checkout, Stripe payments, emails</li>
+            <li>JWT + CAPTCHA auth, rate limiting, CSP/CORS, Celery tasks</li>
+            <li>Railway deployment with PostgreSQL</li>
+          </ul>
+        </div>
+        <div class="project-card">
+          <h3>Modern_Electricos – Advanced Django Patterns</h3>
+          <p><a href="https://github.com/shaanMS/Modern_Electricos" target="_blank">github.com/shaanMS/Modern_Electricos</a></p>
+          <ul>
+            <li>Showcase of modern Django architecture & reusable patterns</li>
+          </ul>
+        </div>
+        <div class="project-card">
+          <h3>FTS_Search_Using_FastApi_Postgresql – Hybrid Search</h3>
+          <p><a href="https://github.com/shaanMS/FTS_Search_Using_FastApi_Postgresql" target="_blank">github.com/shaanMS/FTS_Search_Using_FastApi_Postgresql</a></p>
+          <ul>
+            <li>Async hybrid search: pgvector semantic + GIN full-text + trigram</li>
+            <li>Optimized for low latency & high throughput</li>
+          </ul>
+        </div>
+      </div>
+      <p style="text-align:center; margin-top:30px;">
+        <strong>More projects & experiments:</strong> <a href="https://github.com/shaanMS?tab=repositories" target="_blank">github.com/shaanMS/repositories</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume" style="background:#f8fafc; text-align:center; padding:80px 0;">
+    <div class="container">
+      <h2>My Resume</h2>
+      <p style="margin:20px 0; font-size:1.1rem;">
+        Download my full resume or view it below (PDF embedded for quick preview)
+      </p>
+      <!-- Option 1: Direct PDF link (upload your resume.pdf in repo root) -->
+      <a href="resume.pdf" class="resume-btn" download>Download Resume (PDF)</a>
+      
+      <!-- Option 2: Embedded PDF viewer (works best if resume.pdf is in repo) -->
+      <div style="margin-top:40px; max-width:900px; margin-left:auto; margin-right:auto;">
+        <iframe src="resume.pdf" width="100%" height="700px" style="border:1px solid #ddd; border-radius:8px;"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Shaan Mohammad Siddiqui. Built with ❤️ and GitHub Pages.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
