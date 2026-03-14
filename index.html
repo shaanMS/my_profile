@@ -19,91 +19,118 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #ffffff;
+            background: #f0f2f5;
             color: #1e293b;
             line-height: 1.6;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 30px;
         }
 
-        /* Header - Blue & White */
+        /* Header - Modern & Professional */
         .header {
-            background: linear-gradient(135deg, #0a66c2, #1e40af);
+            background: linear-gradient(135deg, #0a66c2 0%, #0e4b8f 100%);
             color: white;
-            padding: 60px 0 40px;
+            padding: 70px 0 50px;
             text-align: center;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .profile-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: white;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid rgba(255,255,255,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .avatar i {
+            font-size: 4rem;
+            color: #0a66c2;
         }
 
         .header h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 700;
             margin-bottom: 10px;
+            letter-spacing: -0.5px;
         }
 
         .header p {
             font-size: 1.2rem;
             opacity: 0.95;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
         }
 
         .social-links a {
             color: white;
-            font-size: 1.8rem;
-            margin: 0 12px;
-            transition: opacity 0.3s;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         .social-links a:hover {
-            opacity: 0.7;
-        }
-
-        /* Sections */
-        section {
-            padding: 60px 0;
-            border-bottom: 1px solid #eef2f6;
-        }
-
-        section:last-child {
-            border-bottom: none;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            color: #0a66c2;
-            font-weight: 600;
-        }
-
-        /* GitHub Stats Cards - Simple Blue & White */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .stat-card {
             background: white;
-            border-radius: 8px;
-            padding: 25px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            text-align: center;
-            border: 1px solid #eef2f6;
+            color: #0a66c2;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
-        .stat-icon {
-            font-size: 2rem;
-            color: #0a66c2;
-            margin-bottom: 10px;
+        /* Stats Bar */
+        .stats-bar {
+            background: white;
+            border-radius: 20px;
+            padding: 25px 35px;
+            margin-top: -40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-item {
+            text-align: center;
+            border-right: 1px solid #eef2f6;
+            padding: 0 20px;
+        }
+
+        .stat-item:last-child {
+            border-right: none;
         }
 
         .stat-value {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
             color: #0a66c2;
             line-height: 1.2;
@@ -114,63 +141,136 @@
             color: #64748b;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            margin-top: 5px;
         }
 
-        /* Repo Cards */
-        .repo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+        /* Section Styles */
+        section {
+            padding: 60px 0;
         }
 
-        .repo-card {
-            background: white;
-            border-radius: 8px;
-            padding: 25px;
-            border: 1px solid #eef2f6;
-            transition: all 0.2s;
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
         }
 
-        .repo-card:hover {
-            border-color: #0a66c2;
-            box-shadow: 0 5px 15px rgba(10,102,194,0.1);
-        }
-
-        .repo-header {
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #1e293b;
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+
+        .section-title i {
+            color: #0a66c2;
+            font-size: 1.8rem;
+        }
+
+        .section-title span {
+            background: #0a66c2;
+            color: white;
+            font-size: 0.9rem;
+            padding: 4px 12px;
+            border-radius: 30px;
+            margin-left: 10px;
+        }
+
+        .view-all {
+            color: #0a66c2;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.3s;
+        }
+
+        .view-all:hover {
+            gap: 10px;
+        }
+
+        /* Pinned Repos - Featured Cards */
+        .pinned-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .pinned-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+            border: 1px solid #eef2f6;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pinned-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0a66c2, #4a90e2);
+        }
+
+        .pinned-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(10,102,194,0.1);
+            border-color: #0a66c2;
+        }
+
+        .pinned-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             margin-bottom: 15px;
         }
 
-        .repo-header i {
-            font-size: 1.5rem;
+        .pinned-header i {
+            font-size: 1.8rem;
             color: #0a66c2;
         }
 
-        .repo-header h3 {
+        .pinned-header h3 {
             font-size: 1.2rem;
             font-weight: 600;
             color: #1e293b;
+            flex: 1;
         }
 
-        .repo-desc {
+        .pinned-badge {
+            background: #e8f0fe;
+            color: #0a66c2;
+            font-size: 0.7rem;
+            padding: 3px 10px;
+            border-radius: 30px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .pinned-desc {
             color: #64748b;
-            margin-bottom: 15px;
             font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
         }
 
-        .repo-stats {
+        .pinned-stats {
             display: flex;
-            gap: 15px;
-            padding: 12px 0;
-            border-top: 1px solid #eef2f6;
-            border-bottom: 1px solid #eef2f6;
-            margin-bottom: 15px;
+            gap: 20px;
+            margin: 15px 0;
         }
 
-        .repo-stat {
+        .pinned-stats span {
             display: flex;
             align-items: center;
             gap: 5px;
@@ -178,16 +278,25 @@
             font-size: 0.9rem;
         }
 
-        .repo-stat i {
+        .pinned-stats i {
             color: #0a66c2;
         }
 
-        .repo-language {
+        .pinned-footer {
             display: flex;
             align-items: center;
-            gap: 8px;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eef2f6;
+        }
+
+        .pinned-language {
+            display: flex;
+            align-items: center;
+            gap: 6px;
             font-size: 0.9rem;
-            color: #64748b;
+            color: #475569;
         }
 
         .lang-dot {
@@ -197,148 +306,302 @@
             background: #0a66c2;
         }
 
-        .repo-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+        .pinned-link {
             color: #0a66c2;
             text-decoration: none;
             font-weight: 500;
-            margin-top: 10px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
-        .repo-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Skills Grid - Simple */
-        .skills-grid {
+        /* All Repos Grid */
+        .repos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 20px;
         }
 
-        .skill-category {
+        .repo-card {
             background: white;
-            border-radius: 8px;
-            padding: 25px;
+            border-radius: 16px;
+            padding: 20px;
             border: 1px solid #eef2f6;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
         }
 
-        .skill-category h3 {
-            color: #0a66c2;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
+        .repo-card:hover {
+            border-color: #0a66c2;
+            box-shadow: 0 8px 25px rgba(10,102,194,0.05);
+        }
+
+        .repo-card-header {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            margin-bottom: 12px;
         }
 
-        .skill-tags {
+        .repo-card-header i {
+            font-size: 1.4rem;
+            color: #0a66c2;
+        }
+
+        .repo-card-header h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e293b;
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .repo-card-desc {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 42px;
+        }
+
+        .repo-card-stats {
+            display: flex;
+            gap: 15px;
+            margin: 10px 0;
+        }
+
+        .repo-card-stats span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+
+        .repo-card-stats i {
+            color: #0a66c2;
+            font-size: 0.9rem;
+        }
+
+        .repo-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+            padding-top: 12px;
+            border-top: 1px solid #eef2f6;
+        }
+
+        .repo-language {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .repo-date {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .repo-link-icon {
+            color: #0a66c2;
+            transition: transform 0.2s;
+        }
+
+        .repo-card:hover .repo-link-icon {
+            transform: translateX(3px);
+        }
+
+        /* Skills Section */
+        .skills-wrapper {
+            background: white;
+            border-radius: 24px;
+            padding: 35px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-group h4 {
+            color: #0a66c2;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .skill-items {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
         }
 
-        .skill-tag {
+        .skill-item {
             background: #f8fafc;
             padding: 6px 14px;
-            border-radius: 20px;
+            border-radius: 30px;
             font-size: 0.9rem;
             color: #1e293b;
             border: 1px solid #eef2f6;
+            transition: all 0.2s;
         }
 
-        /* Experience */
-        .experience-item {
+        .skill-item:hover {
+            background: #0a66c2;
+            color: white;
+            border-color: #0a66c2;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .timeline-item {
             background: white;
-            border-radius: 8px;
+            border-radius: 16px;
             padding: 25px;
             border: 1px solid #eef2f6;
-            margin-bottom: 20px;
+            display: flex;
+            gap: 25px;
+            align-items: flex-start;
         }
 
-        .experience-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .experience-item h3 {
+        .timeline-date {
+            min-width: 140px;
+            background: #e8f0fe;
             color: #0a66c2;
-            margin-bottom: 5px;
-        }
-
-        .experience-date {
-            color: #64748b;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-weight: 600;
             font-size: 0.9rem;
-            margin-bottom: 15px;
-            display: inline-block;
-            background: #f8fafc;
-            padding: 4px 12px;
-            border-radius: 20px;
+            text-align: center;
         }
 
-        .experience-item ul {
-            padding-left: 20px;
-            color: #475569;
+        .timeline-content {
+            flex: 1;
         }
 
-        .experience-item li {
+        .timeline-content h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e293b;
             margin-bottom: 5px;
+        }
+
+        .timeline-content h4 {
+            color: #0a66c2;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .timeline-content p {
+            color: #64748b;
+            font-size: 0.95rem;
         }
 
         /* Resume Button */
+        .resume-section {
+            background: linear-gradient(135deg, #0a66c2 0%, #1e4f8a 100%);
+            border-radius: 30px;
+            padding: 60px;
+            text-align: center;
+            color: white;
+        }
+
         .resume-btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: #0a66c2;
-            color: white;
-            padding: 12px 32px;
-            border-radius: 6px;
+            gap: 12px;
+            background: white;
+            color: #0a66c2;
+            padding: 16px 42px;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 1.1rem;
-            transition: background 0.2s;
+            margin-top: 25px;
+            transition: all 0.3s;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
         .resume-btn:hover {
-            background: #084a94;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
         }
 
         /* Footer */
         footer {
-            background: #0a66c2;
+            background: #1e293b;
             color: white;
-            text-align: center;
             padding: 30px 0;
-            margin-top: 40px;
-        }
-
-        /* Loading */
-        .loading {
             text-align: center;
-            padding: 40px;
-            color: #64748b;
         }
 
-        .loading i {
-            font-size: 2rem;
-            color: #0a66c2;
-            margin-bottom: 10px;
+        /* Loading Skeleton */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f2f5 25%, #e0e4e9 50%, #f0f2f5 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 8px;
+            height: 200px;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.2rem;
-            }
-            
-            .header p {
-                font-size: 1rem;
-            }
-            
-            .stats-grid {
+        @media (max-width: 1024px) {
+            .pinned-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pinned-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid #eef2f6;
+                padding-bottom: 15px;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .timeline-date {
+                align-self: flex-start;
             }
         }
     </style>
@@ -347,281 +610,359 @@
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <h1>Shaan Mohammad Siddiqui</h1>
-            <p>Backend & AI Developer | FastAPI • Django • RAG • pgvector • LLM</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/shaan-mohammad-siddiqui-b98aab260" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/shaanMS" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:shaanmohammad2525@gmail.com">
-                    <i class="fas fa-envelope"></i>
-                </a>
+            <div class="profile-wrapper">
+                <div class="avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <h1>Shaan Mohammad Siddiqui</h1>
+                <p>Backend & AI Developer | FastAPI • Django • RAG • pgvector • LLM</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/shaan-mohammad-siddiqui-b98aab260" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/shaanMS" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="mailto:shaanmohammad2525@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="#"><i class="fas fa-file-alt"></i></a>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- About -->
-    <section>
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto; color: #475569;">
-                Backend & AI Developer with experience in building scalable systems and AI-enhanced applications. 
-                Specializing in Python, FastAPI, Django, vector databases, and RAG pipelines.
-            </p>
-        </div>
-    </section>
-
-    <!-- GitHub Live Stats - ONLY NUMBERS, NO GRAPH -->
-    <section>
-        <div class="container">
-            <h2 class="section-title">GitHub Stats</h2>
-            <div class="stats-grid" id="githubStats">
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
-                    <div class="stat-value" id="repoCount">0</div>
-                    <div class="stat-label">Repositories</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-star"></i></div>
-                    <div class="stat-value" id="starCount">0</div>
-                    <div class="stat-label">Total Stars</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-code-fork"></i></div>
-                    <div class="stat-value" id="forkCount">0</div>
-                    <div class="stat-label">Total Forks</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-calendar-day"></i></div>
-                    <div class="stat-value" id="contribToday">0</div>
-                    <div class="stat-label">Today's Commits</div>
-                </div>
+    <div class="container">
+        <!-- Stats Bar -->
+        <div class="stats-bar" id="githubStats">
+            <div class="stat-item">
+                <div class="stat-value" id="repoCount">0</div>
+                <div class="stat-label">Total Repositories</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="starCount">0</div>
+                <div class="stat-label">Stars Earned</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="forkCount">0</div>
+                <div class="stat-label">Forks</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="contribToday">0</div>
+                <div class="stat-label">Today's Activity</div>
             </div>
         </div>
-    </section>
 
-    <!-- Featured Projects -->
-    <section>
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="repo-grid" id="repoGrid">
-                <div class="loading">
-                    <i class="fas fa-spinner fa-spin"></i>
-                    <p>Loading repositories...</p>
+        <!-- Pinned Repositories (Featured) -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-star"></i> Pinned Repositories
+                    <span>Featured</span>
+                </h2>
+                <a href="https://github.com/shaanMS?tab=repositories" target="_blank" class="view-all">
+                    View All <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="pinned-grid" id="pinnedRepos">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- All Repositories (Latest to Last) -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-code-branch"></i> All Repositories
+                    <span id="totalRepoCount">0</span>
+                </h2>
+                <div class="view-all">
+                    <i class="fas fa-arrow-down"></i> Latest First
                 </div>
             </div>
-        </div>
-    </section>
+            <div class="repos-grid" id="allRepos">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </section>
 
-    <!-- Skills -->
-    <section>
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">SQL</span>
+        <!-- Technical Skills -->
+        <section>
+            <h2 class="section-title">
+                <i class="fas fa-cog"></i> Technical Skills
+            </h2>
+            <div class="skills-wrapper">
+                <div class="skills-grid">
+                    <div class="skill-group">
+                        <h4>Languages</h4>
+                        <div class="skill-items">
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">Java</span>
+                            <span class="skill-item">JavaScript</span>
+                            <span class="skill-item">SQL</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Frameworks</h4>
+                        <div class="skill-items">
+                            <span class="skill-item">FastAPI</span>
+                            <span class="skill-item">Django</span>
+                            <span class="skill-item">LangChain</span>
+                            <span class="skill-item">Spring Boot</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Databases</h4>
+                        <div class="skill-items">
+                            <span class="skill-item">PostgreSQL</span>
+                            <span class="skill-item">pgvector</span>
+                            <span class="skill-item">MongoDB</span>
+                            <span class="skill-item">Qdrant</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>AI/ML</h4>
+                        <div class="skill-items">
+                            <span class="skill-item">RAG</span>
+                            <span class="skill-item">Embeddings</span>
+                            <span class="skill-item">LLMs</span>
+                            <span class="skill-item">Vector Search</span>
+                        </div>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-cubes"></i> Frameworks</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">FastAPI</span>
-                        <span class="skill-tag">Django</span>
-                        <span class="skill-tag">LangChain</span>
-                        <span class="skill-tag">Spring Boot</span>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section>
+            <h2 class="section-title">
+                <i class="fas fa-briefcase"></i> Experience
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Jan 2025 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Backend & AI Developer</h3>
+                        <h4>Self-Directed Projects</h4>
+                        <p>Building RAG pipelines with FastAPI & pgvector, developing AI-powered search applications, and creating production-grade APIs.</p>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-database"></i> Databases</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">pgvector</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">Qdrant</span>
+                <div class="timeline-item">
+                    <div class="timeline-date">Aug 2024 - Dec 2024</div>
+                    <div class="timeline-content">
+                        <h3>Cybersecurity Instructor</h3>
+                        <h4>RR Group of Institutions</h4>
+                        <p>Trained 100+ students on OWASP Top 10, secure coding practices, and created hands-on security labs for Python/Django applications.</p>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-robot"></i> AI/ML</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">RAG</span>
-                        <span class="skill-tag">Embeddings</span>
-                        <span class="skill-tag">LLMs</span>
-                        <span class="skill-tag">Vector Search</span>
+                <div class="timeline-item">
+                    <div class="timeline-date">Oct 2021 - Dec 2021</div>
+                    <div class="timeline-content">
+                        <h3>Java Developer Intern</h3>
+                        <h4>Analyze Infotech Pvt Ltd</h4>
+                        <p>Built RESTful services using Java & Spring Boot, implemented CRUD operations, and handled data processing tasks.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Experience -->
-    <section>
-        <div class="container">
-            <h2 class="section-title">Experience</h2>
-            
-            <div class="experience-item">
-                <span class="experience-date">Oct 2021 – Dec 2021</span>
-                <h3>Java Developer Intern</h3>
-                <p style="color: #0a66c2; margin-bottom: 10px;">Analyze Infotech Pvt Ltd</p>
-                <ul>
-                    <li>Built RESTful services using Java & Spring Boot</li>
-                    <li>Implemented CRUD operations and data processing</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <span class="experience-date">Aug 2024 – Dec 2024</span>
-                <h3>Cybersecurity Instructor</h3>
-                <p style="color: #0a66c2; margin-bottom: 10px;">RR Group of Institutions</p>
-                <ul>
-                    <li>Trained 100+ students on OWASP Top 10 & secure coding</li>
-                    <li>Created hands-on security labs for Python/Django</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <span class="experience-date">Jan 2025 – Present</span>
-                <h3>Backend & AI Developer</h3>
-                <p style="color: #0a66c2; margin-bottom: 10px;">Self-Directed Projects</p>
-                <ul>
-                    <li>Building RAG pipelines with FastAPI & pgvector</li>
-                    <li>Developing AI-powered search applications</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Resume -->
-    <section style="text-align: center;">
-        <div class="container">
-            <h2 class="section-title">Resume</h2>
-            <p style="margin-bottom: 25px; color: #475569;">Download my detailed resume</p>
-            <a href="https://github.com/shaanMS/my_profile/blob/main/shaan%20resume%201.pdf" 
-               class="resume-btn" download>
+        <!-- Resume Section -->
+        <section class="resume-section">
+            <h2 style="font-size: 2rem; margin-bottom: 15px;">📄 Download Resume</h2>
+            <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 20px;">Get my detailed resume with complete experience and project details</p>
+            <a href="https://github.com/shaanMS/my_profile/blob/main/shaan%20resume%201.pdf" class="resume-btn" download>
                 <i class="fas fa-download"></i> Download PDF
             </a>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2026 Shaan Mohammad Siddiqui</p>
-            <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.9;">Last updated: <span id="lastUpdated"></span></p>
+            <p>© 2026 Shaan Mohammad Siddiqui • Backend & AI Developer</p>
+            <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.7;">Last updated: <span id="lastUpdated"></span> • Data refreshes every 5 minutes</p>
         </div>
     </footer>
 
     <script>
         const GITHUB_USERNAME = 'shaanMS';
         
-        // DOM Elements
-        const repoGrid = document.getElementById('repoGrid');
+        // Get DOM elements
+        const pinnedContainer = document.getElementById('pinnedRepos');
+        const allReposContainer = document.getElementById('allRepos');
         const repoCountEl = document.getElementById('repoCount');
+        const totalRepoCountEl = document.getElementById('totalRepoCount');
         const starCountEl = document.getElementById('starCount');
         const forkCountEl = document.getElementById('forkCount');
         const contribTodayEl = document.getElementById('contribToday');
         const lastUpdatedEl = document.getElementById('lastUpdated');
 
         // Update timestamp
-        lastUpdatedEl.textContent = new Date().toLocaleDateString('en-US', {
+        lastUpdatedEl.textContent = new Date().toLocaleString('en-US', {
             year: 'numeric',
             month: 'long',
-            day: 'numeric'
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
         });
 
-        // Fetch GitHub data
-        async function fetchGitHubData() {
+        // Language colors mapping
+        const languageColors = {
+            'Python': '#3572A5',
+            'JavaScript': '#F7DF1E',
+            'Java': '#B07219',
+            'HTML': '#E34C26',
+            'CSS': '#563D7C',
+            'TypeScript': '#3178C6',
+            'PHP': '#4F5D95',
+            'Ruby': '#701516',
+            'Go': '#00ADD8',
+            'Rust': '#DEA584',
+            'C++': '#F34B7D',
+            'C': '#555555',
+            'C#': '#178600',
+            'Swift': '#FFAC45',
+            'Kotlin': '#F18E33'
+        };
+
+        // Pinned repositories (manually selected featured projects)
+        const PINNED_REPOS = [
+            'renting.ai',
+            'Hungrio',
+            'FTS_Search_Using_FastApi_Postgresql',
+            'Modern_Electricos',
+            'Python',
+            'my_profile'
+        ];
+
+        // Fetch all repositories
+        async function fetchAllRepos() {
             try {
-                // Fetch repos
-                const reposResponse = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100`);
-                const repos = await reposResponse.json();
+                // Show loading state
+                pinnedContainer.innerHTML = '<div class="skeleton" style="grid-column: 1/-1; height: 250px;"></div>'.repeat(3);
+                allReposContainer.innerHTML = '<div class="skeleton" style="height: 200px;"></div>'.repeat(6);
+
+                // Fetch repos from GitHub
+                const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated&direction=desc`);
+                const allRepos = await response.json();
                 
-                // Update repo count
-                repoCountEl.textContent = repos.length;
+                // Update stats
+                repoCountEl.textContent = allRepos.length;
+                totalRepoCountEl.textContent = allRepos.length;
                 
-                // Calculate stars and forks
-                const totalStars = repos.reduce((acc, repo) => acc + repo.stargazers_count, 0);
-                const totalForks = repos.reduce((acc, repo) => acc + repo.forks_count, 0);
+                // Calculate total stars and forks
+                const totalStars = allRepos.reduce((acc, repo) => acc + repo.stargazers_count, 0);
+                const totalForks = allRepos.reduce((acc, repo) => acc + repo.forks_count, 0);
                 
                 starCountEl.textContent = totalStars;
                 forkCountEl.textContent = totalForks;
                 
-                // Display top 6 repos
-                displayRepositories(repos.slice(0, 6));
-                
-                // Fetch events for today's contributions
+                // Get today's activity
                 const eventsResponse = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/events`);
                 const events = await eventsResponse.json();
-                
                 const today = new Date().toDateString();
-                const todayEvents = events.filter(event => {
-                    return new Date(event.created_at).toDateString() === today;
-                }).length;
-                
+                const todayEvents = events.filter(event => new Date(event.created_at).toDateString() === today).length;
                 contribTodayEl.textContent = todayEvents;
+
+                // Filter pinned repos
+                const pinnedRepos = allRepos.filter(repo => PINNED_REPOS.includes(repo.name));
+                displayPinnedRepos(pinnedRepos);
+                
+                // Display all repos (already sorted by updated_at desc from API)
+                displayAllRepos(allRepos);
                 
             } catch (error) {
-                console.error('Error:', error);
-                repoGrid.innerHTML = '<div class="loading"><i class="fas fa-exclamation-circle"></i><p>Unable to load repositories</p></div>';
+                console.error('Error fetching repos:', error);
+                pinnedContainer.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px; color: #dc2626;"><i class="fas fa-exclamation-circle"></i> Error loading repositories</div>';
+                allReposContainer.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px; color: #dc2626;"><i class="fas fa-exclamation-circle"></i> Error loading repositories</div>';
             }
         }
 
-        // Display repositories
-        function displayRepositories(repos) {
-            repoGrid.innerHTML = '';
-            
-            repos.forEach(repo => {
-                const card = document.createElement('div');
-                card.className = 'repo-card';
-                
+        // Display pinned repositories
+        function displayPinnedRepos(repos) {
+            if (repos.length === 0) {
+                pinnedContainer.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px; color: #64748b;">No pinned repositories found</div>';
+                return;
+            }
+
+            pinnedContainer.innerHTML = repos.map(repo => {
                 const updatedDate = new Date(repo.updated_at).toLocaleDateString('en-US', {
                     month: 'short',
                     day: 'numeric',
                     year: 'numeric'
                 });
                 
-                card.innerHTML = `
-                    <div class="repo-header">
-                        <i class="fas fa-book"></i>
-                        <h3>${repo.name}</h3>
+                return `
+                    <div class="pinned-card">
+                        <div class="pinned-header">
+                            <i class="fas fa-book"></i>
+                            <h3>${repo.name}</h3>
+                            <span class="pinned-badge">PINNED</span>
+                        </div>
+                        <p class="pinned-desc">${repo.description || 'No description provided'}</p>
+                        <div class="pinned-stats">
+                            <span><i class="fas fa-star"></i> ${repo.stargazers_count}</span>
+                            <span><i class="fas fa-code-branch"></i> ${repo.forks_count}</span>
+                            <span><i class="fas fa-eye"></i> ${repo.watchers_count}</span>
+                        </div>
+                        <div class="pinned-footer">
+                            <div class="pinned-language">
+                                <span class="lang-dot" style="background: ${languageColors[repo.language] || '#6b7280'}"></span>
+                                ${repo.language || 'Various'}
+                            </div>
+                            <span style="font-size: 0.85rem; color: #94a3b8;">
+                                <i class="far fa-calendar"></i> ${updatedDate}
+                            </span>
+                        </div>
+                        <a href="${repo.html_url}" target="_blank" class="pinned-link">
+                            View Repository <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
-                    <p class="repo-desc">${repo.description || 'No description'}</p>
-                    <div class="repo-stats">
-                        <span class="repo-stat">
-                            <i class="fas fa-star"></i> ${repo.stargazers_count}
-                        </span>
-                        <span class="repo-stat">
-                            <i class="fas fa-code-branch"></i> ${repo.forks_count}
-                        </span>
-                    </div>
-                    <div class="repo-language">
-                        <span class="lang-dot"></span>
-                        ${repo.language || 'Various'}
-                        <span style="margin-left: auto; font-size: 0.85rem;">
-                            <i class="far fa-calendar"></i> ${updatedDate}
-                        </span>
-                    </div>
-                    <a href="${repo.html_url}" target="_blank" class="repo-link">
-                        View <i class="fas fa-arrow-right"></i>
-                    </a>
                 `;
+            }).join('');
+        }
+
+        // Display all repositories (latest first)
+        function displayAllRepos(repos) {
+            if (repos.length === 0) {
+                allReposContainer.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px; color: #64748b;">No repositories found</div>';
+                return;
+            }
+
+            allReposContainer.innerHTML = repos.map(repo => {
+                const updatedDate = new Date(repo.updated_at).toLocaleDateString('en-US', {
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric'
+                });
                 
-                repoGrid.appendChild(card);
-            });
+                return `
+                    <div class="repo-card">
+                        <div class="repo-card-header">
+                            <i class="fas fa-book"></i>
+                            <h4 title="${repo.name}">${repo.name}</h4>
+                        </div>
+                        <p class="repo-card-desc" title="${repo.description || 'No description'}">${repo.description || 'No description provided'}</p>
+                        <div class="repo-card-stats">
+                            <span><i class="fas fa-star"></i> ${repo.stargazers_count}</span>
+                            <span><i class="fas fa-code-branch"></i> ${repo.forks_count}</span>
+                            <span><i class="fas fa-eye"></i> ${repo.watchers_count}</span>
+                        </div>
+                        <div class="repo-card-footer">
+                            <div class="repo-language">
+                                <span class="lang-dot" style="background: ${languageColors[repo.language] || '#6b7280'}"></span>
+                                <span>${repo.language || 'N/A'}</span>
+                            </div>
+                            <div class="repo-date">
+                                <i class="far fa-clock"></i> ${updatedDate}
+                            </div>
+                            <a href="${repo.html_url}" target="_blank" class="repo-link-icon">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }).join('');
         }
 
         // Initialize
-        fetchGitHubData();
-        
+        fetchAllRepos();
+
         // Refresh every 5 minutes
-        setInterval(fetchGitHubData, 300000);
+        setInterval(fetchAllRepos, 300000);
     </script>
 </body>
 </html>
