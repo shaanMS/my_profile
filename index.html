@@ -1,261 +1,627 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shaan Mohammad Siddiqui | Backend & AI Developer</title>
-  <meta name="description" content="Full-Stack & AI Backend Developer | FastAPI, Django, RAG, pgvector, LLM integration | India"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <style>
-    :root {
-      --primary: #0a66c2;
-      --dark: #1e293b;
-      --light: #f8fafc;
-      --gray: #64748b;
-    }
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
-    }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-    header {
-      background: linear-gradient(135deg, var(--primary), #1e40af);
-      color: white;
-      padding: 80px 0 60px;
-      text-align: center;
-    }
-    header h1 { font-size: 3rem; margin-bottom: 8px; }
-    header p { font-size: 1.3rem; opacity: 0.9; }
-    .social-links a {
-      color: white;
-      font-size: 1.8rem;
-      margin: 0 12px;
-      transition: 0.3s;
-    }
-    .social-links a:hover { transform: scale(1.2); opacity: 0.8; }
-    section { padding: 60px 0; }
-    h2 {
-      text-align: center;
-      font-size: 2.2rem;
-      margin-bottom: 40px;
-      color: var(--primary);
-      position: relative;
-    }
-    h2::after {
-      content: '';
-      width: 60px;
-      height: 4px;
-      background: var(--primary);
-      position: absolute;
-      bottom: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    .skills-grid, .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-    .skill-card, .project-card {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      transition: transform 0.3s;
-    }
-    .skill-card:hover, .project-card:hover { transform: translateY(-8px); }
-    .project-card h3 { color: var(--primary); margin-bottom: 12px; }
-    .project-card a { color: var(--primary); font-weight: bold; text-decoration: none; }
-    .project-card a:hover { text-decoration: underline; }
-    .experience-item { margin-bottom: 30px; }
-    .experience-item h3 { color: var(--primary); }
-    .experience-item span { color: var(--gray); font-style: italic; }
-    .resume-btn {
-      display: inline-block;
-      background: var(--primary);
-      color: white;
-      padding: 14px 32px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 20px;
-      transition: 0.3s;
-    }
-    .resume-btn:hover { background: #0845a1; transform: translateY(-3px); }
-    footer {
-      background: var(--dark);
-      color: white;
-      text-align: center;
-      padding: 30px 0;
-      margin-top: 60px;
-    }
-    @media (max-width: 768px) {
-      header h1 { font-size: 2.4rem; }
-      header { padding: 60px 0 40px; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaan Mohammad Siddiqui | Backend & AI Developer</title>
+    <meta name="description" content="Backend & AI Developer specializing in FastAPI, Django, RAG pipelines, pgvector, and LLM integration">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header - Blue & White */
+        .header {
+            background: linear-gradient(135deg, #0a66c2, #1e40af);
+            color: white;
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.8rem;
+            margin: 0 12px;
+            transition: opacity 0.3s;
+        }
+
+        .social-links a:hover {
+            opacity: 0.7;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #eef2f6;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #0a66c2;
+            font-weight: 600;
+        }
+
+        /* GitHub Stats Cards - Simple Blue & White */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            text-align: center;
+            border: 1px solid #eef2f6;
+        }
+
+        .stat-icon {
+            font-size: 2rem;
+            color: #0a66c2;
+            margin-bottom: 10px;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0a66c2;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Repo Cards */
+        .repo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .repo-card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            border: 1px solid #eef2f6;
+            transition: all 0.2s;
+        }
+
+        .repo-card:hover {
+            border-color: #0a66c2;
+            box-shadow: 0 5px 15px rgba(10,102,194,0.1);
+        }
+
+        .repo-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .repo-header i {
+            font-size: 1.5rem;
+            color: #0a66c2;
+        }
+
+        .repo-header h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .repo-desc {
+            color: #64748b;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .repo-stats {
+            display: flex;
+            gap: 15px;
+            padding: 12px 0;
+            border-top: 1px solid #eef2f6;
+            border-bottom: 1px solid #eef2f6;
+            margin-bottom: 15px;
+        }
+
+        .repo-stat {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .repo-stat i {
+            color: #0a66c2;
+        }
+
+        .repo-language {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .lang-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #0a66c2;
+        }
+
+        .repo-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #0a66c2;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
+        .repo-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Skills Grid - Simple */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            border: 1px solid #eef2f6;
+        }
+
+        .skill-category h3 {
+            color: #0a66c2;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: #f8fafc;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #1e293b;
+            border: 1px solid #eef2f6;
+        }
+
+        /* Experience */
+        .experience-item {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            border: 1px solid #eef2f6;
+            margin-bottom: 20px;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-item h3 {
+            color: #0a66c2;
+            margin-bottom: 5px;
+        }
+
+        .experience-date {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: inline-block;
+            background: #f8fafc;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .experience-item ul {
+            padding-left: 20px;
+            color: #475569;
+        }
+
+        .experience-item li {
+            margin-bottom: 5px;
+        }
+
+        /* Resume Button */
+        .resume-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #0a66c2;
+            color: white;
+            padding: 12px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: background 0.2s;
+        }
+
+        .resume-btn:hover {
+            background: #084a94;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a66c2;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #64748b;
+        }
+
+        .loading i {
+            font-size: 2rem;
+            color: #0a66c2;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .header p {
+                font-size: 1rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Shaan Mohammad Siddiqui</h1>
+            <p>Backend & AI Developer | FastAPI • Django • RAG • pgvector • LLM</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/shaan-mohammad-siddiqui-b98aab260" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/shaanMS" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:shaanmohammad2525@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </header>
 
-  <!-- Hero Header -->
-  <header>
-    <div class="container">
-      <h1>Shaan Mohammad Siddiqui</h1>
-      <p>Backend & AI Developer | FastAPI • Django • RAG • pgvector • LLM Integration</p>
-      <div class="social-links" style="margin-top:20px;">
-        <a href="https://www.linkedin.com/in/shaan-mohammad-siddiqui-b98aab260" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/shaanMS" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="mailto:shaanmohammad2525@gmail.com"><i class="fas fa-envelope"></i></a>
-      </div>
-    </div>
-  </header>
+    <!-- About -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto; color: #475569;">
+                Backend & AI Developer with experience in building scalable systems and AI-enhanced applications. 
+                Specializing in Python, FastAPI, Django, vector databases, and RAG pipelines.
+            </p>
+        </div>
+    </section>
 
-  <!-- Summary & Skills -->
-  <section id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p style="max-width:800px; margin:0 auto 40px; text-align:center;">
-        Results-oriented developer with hands-on experience in building scalable backend systems and AI-enhanced search applications. 
-        Passionate about modern Python stacks, vector databases, RAG pipelines, and secure architectures. Currently focused on production-grade 
-        APIs and intelligent search solutions for real-world use cases (e-commerce, real-estate, etc.).
-      </p>
+    <!-- GitHub Live Stats - ONLY NUMBERS, NO GRAPH -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">GitHub Stats</h2>
+            <div class="stats-grid" id="githubStats">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
+                    <div class="stat-value" id="repoCount">0</div>
+                    <div class="stat-label">Repositories</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-star"></i></div>
+                    <div class="stat-value" id="starCount">0</div>
+                    <div class="stat-label">Total Stars</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-code-fork"></i></div>
+                    <div class="stat-value" id="forkCount">0</div>
+                    <div class="stat-label">Total Forks</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-calendar-day"></i></div>
+                    <div class="stat-value" id="contribToday">0</div>
+                    <div class="stat-label">Today's Commits</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <h2>Technical Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h3>Languages</h3>
-          <p>Python (Advanced), Java, JavaScript (Basic), SQL</p>
+    <!-- Featured Projects -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="repo-grid" id="repoGrid">
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Loading repositories...</p>
+                </div>
+            </div>
         </div>
-        <div class="skill-card">
-          <h3>Frameworks</h3>
-          <p>FastAPI (async APIs, Pydantic), Django</p>
-        </div>
-        <div class="skill-card">
-          <h3>Databases</h3>
-          <p>PostgreSQL (pgvector, FTS, concurrency, transactions, indexing, views & MV, EXPLAIN ANALYZE, multitenant, DB design, normalization, ERD, ACID, JSON/JSONB), Qdrant, MongoDB</p>
-        </div>
-        <div class="skill-card">
-          <h3>AI / Search</h3>
-          <p>RAG pipelines, Vector Embeddings, Semantic Search, LangChain, LLM integration, Hugging Face</p>
-        </div>
-        <div class="skill-card">
-          <h3>Security</h3>
-          <p>JWT/OAuth, OWASP Top 10, Rate Limiting, CSRF, Request Tracking, Custom Middlewares, Headers Security</p>
-        </div>
-        <div class="skill-card">
-          <h3>Tools & DevOps</h3>
-          <p>Git, Docker basics, KeyDB (caching), Celery, Railway, CI/CD</p>
-        </div>
-        <div class="skill-card">
-          <h3>Concepts</h3>
-          <p>System Design, Async Programming, Microservices, REST Architecture</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Experience -->
-  <section id="experience" style="background:#f8fafc;">
-    <div class="container">
-      <h2>Experience</h2>
-      <div class="experience-item">
-        <h3>Java Software Developer Intern</h3>
-        <p><strong>Analyze Infotech Pvt Ltd</strong> • Oct 2021 – Dec 2021</p>
-        <ul>
-          <li>Built RESTful backend services using Java + Spring Boot</li>
-          <li>Implemented CRUD operations, data processing, and file handling</li>
-        </ul>
-      </div>
-      <div class="experience-item">
-        <h3>Cybersecurity Instructor</h3>
-        <p><strong>RR Group of Institutions</strong> • Aug 2024 – Dec 2024</p>
-        <ul>
-          <li>Trained 100+ students on OWASP Top 10, secure coding practices, and JWT authentication</li>
-          <li>Created hands-on labs integrating security in Python/Django applications</li>
-        </ul>
-      </div>
-      <div class="experience-item">
-        <h3>Backend & AI Upskilling Period</h3>
-        <p><strong>Self-Directed</strong> • Jan 2025 – Feb 2026</p>
-        <ul>
-          <li>Mastered FastAPI, RAG pipelines, pgvector vector search, LLM integration, advanced PostgreSQL, and system design</li>
-          <li>Built 10+ production-grade projects on GitHub (see below)</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects">
-    <div class="container">
-      <h2>Featured Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>renting.ai – AI Semantic Rental Search</h3>
-          <p><a href="https://github.com/shaanMS/renting.ai" target="_blank">github.com/shaanMS/renting.ai</a></p>
-          <ul>
-            <li>RAG-based natural language property search with vector embeddings & hybrid retrieval</li>
-            <li>FastAPI backend + Qdrant vector DB + LangChain + LLM integration</li>
-            <li>ETL pipeline for Indian real-estate data</li>
-          </ul>
+    <!-- Skills -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-cubes"></i> Frameworks</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">Spring Boot</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Databases</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">pgvector</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Qdrant</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-robot"></i> AI/ML</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">RAG</span>
+                        <span class="skill-tag">Embeddings</span>
+                        <span class="skill-tag">LLMs</span>
+                        <span class="skill-tag">Vector Search</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="project-card">
-          <h3>Hungrio – Full Food Ordering Backend</h3>
-          <p><a href="https://github.com/shaanMS/Hungrio" target="_blank">github.com/shaanMS/Hungrio</a></p>
-          <ul>
-            <li>Complete backend: catalog, cart, checkout, Stripe payments, emails</li>
-            <li>JWT + CAPTCHA auth, rate limiting, CSP/CORS, Celery tasks</li>
-            <li>Railway deployment with PostgreSQL</li>
-          </ul>
-        </div>
-        <div class="project-card">
-          <h3>Modern_Electricos – Advanced Django Patterns</h3>
-          <p><a href="https://github.com/shaanMS/Modern_Electricos" target="_blank">github.com/shaanMS/Modern_Electricos</a></p>
-          <ul>
-            <li>Showcase of modern Django architecture & reusable patterns</li>
-          </ul>
-        </div>
-        <div class="project-card">
-          <h3>FTS_Search_Using_FastApi_Postgresql – Hybrid Search</h3>
-          <p><a href="https://github.com/shaanMS/FTS_Search_Using_FastApi_Postgresql" target="_blank">github.com/shaanMS/FTS_Search_Using_FastApi_Postgresql</a></p>
-          <ul>
-            <li>Async hybrid search: pgvector semantic + GIN full-text + trigram</li>
-            <li>Optimized for low latency & high throughput</li>
-          </ul>
-        </div>
-      </div>
-      <p style="text-align:center; margin-top:30px;">
-        <strong>More projects & experiments:</strong> <a href="https://github.com/shaanMS?tab=repositories" target="_blank">github.com/shaanMS/repositories</a>
-      </p>
-    </div>
-  </section>
+    </section>
 
-  <!-- Resume Section -->
-  <section id="resume" style="background:#f8fafc; text-align:center; padding:80px 0;">
-    <div class="container">
-      <h2>My Resume</h2>
-      <p style="margin:20px 0; font-size:1.1rem;">
-        Download my full resume or view it below (PDF embedded for quick preview)
-      </p>
-      <!-- Option 1: Direct PDF link (upload your resume.pdf in repo root) -->
-      <a href="https://github.com/shaanMS/my_profile/blob/main/shaan%20resume%201.pdf" class="resume-btn" download>Download Resume (PDF)</a>
-      
-      <!-- Option 2: Embedded PDF viewer (works best if resume.pdf is in repo) -->
-      <div style="margin-top:40px; max-width:900px; margin-left:auto; margin-right:auto;">
-        <iframe src="https://github.com/shaanMS/my_profile/blob/main/shaan%20resume%201.pdf" width="100%" height="700px" style="border:1px solid #ddd; border-radius:8px;"></iframe>
-      </div>
-    </div>
-  </section>
+    <!-- Experience -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            
+            <div class="experience-item">
+                <span class="experience-date">Oct 2021 – Dec 2021</span>
+                <h3>Java Developer Intern</h3>
+                <p style="color: #0a66c2; margin-bottom: 10px;">Analyze Infotech Pvt Ltd</p>
+                <ul>
+                    <li>Built RESTful services using Java & Spring Boot</li>
+                    <li>Implemented CRUD operations and data processing</li>
+                </ul>
+            </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 Shaan.</p>
-    </div>
-  </footer>
+            <div class="experience-item">
+                <span class="experience-date">Aug 2024 – Dec 2024</span>
+                <h3>Cybersecurity Instructor</h3>
+                <p style="color: #0a66c2; margin-bottom: 10px;">RR Group of Institutions</p>
+                <ul>
+                    <li>Trained 100+ students on OWASP Top 10 & secure coding</li>
+                    <li>Created hands-on security labs for Python/Django</li>
+                </ul>
+            </div>
 
+            <div class="experience-item">
+                <span class="experience-date">Jan 2025 – Present</span>
+                <h3>Backend & AI Developer</h3>
+                <p style="color: #0a66c2; margin-bottom: 10px;">Self-Directed Projects</p>
+                <ul>
+                    <li>Building RAG pipelines with FastAPI & pgvector</li>
+                    <li>Developing AI-powered search applications</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume -->
+    <section style="text-align: center;">
+        <div class="container">
+            <h2 class="section-title">Resume</h2>
+            <p style="margin-bottom: 25px; color: #475569;">Download my detailed resume</p>
+            <a href="https://github.com/shaanMS/my_profile/blob/main/shaan%20resume%201.pdf" 
+               class="resume-btn" download>
+                <i class="fas fa-download"></i> Download PDF
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Shaan Mohammad Siddiqui</p>
+            <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.9;">Last updated: <span id="lastUpdated"></span></p>
+        </div>
+    </footer>
+
+    <script>
+        const GITHUB_USERNAME = 'shaanMS';
+        
+        // DOM Elements
+        const repoGrid = document.getElementById('repoGrid');
+        const repoCountEl = document.getElementById('repoCount');
+        const starCountEl = document.getElementById('starCount');
+        const forkCountEl = document.getElementById('forkCount');
+        const contribTodayEl = document.getElementById('contribToday');
+        const lastUpdatedEl = document.getElementById('lastUpdated');
+
+        // Update timestamp
+        lastUpdatedEl.textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+
+        // Fetch GitHub data
+        async function fetchGitHubData() {
+            try {
+                // Fetch repos
+                const reposResponse = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100`);
+                const repos = await reposResponse.json();
+                
+                // Update repo count
+                repoCountEl.textContent = repos.length;
+                
+                // Calculate stars and forks
+                const totalStars = repos.reduce((acc, repo) => acc + repo.stargazers_count, 0);
+                const totalForks = repos.reduce((acc, repo) => acc + repo.forks_count, 0);
+                
+                starCountEl.textContent = totalStars;
+                forkCountEl.textContent = totalForks;
+                
+                // Display top 6 repos
+                displayRepositories(repos.slice(0, 6));
+                
+                // Fetch events for today's contributions
+                const eventsResponse = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/events`);
+                const events = await eventsResponse.json();
+                
+                const today = new Date().toDateString();
+                const todayEvents = events.filter(event => {
+                    return new Date(event.created_at).toDateString() === today;
+                }).length;
+                
+                contribTodayEl.textContent = todayEvents;
+                
+            } catch (error) {
+                console.error('Error:', error);
+                repoGrid.innerHTML = '<div class="loading"><i class="fas fa-exclamation-circle"></i><p>Unable to load repositories</p></div>';
+            }
+        }
+
+        // Display repositories
+        function displayRepositories(repos) {
+            repoGrid.innerHTML = '';
+            
+            repos.forEach(repo => {
+                const card = document.createElement('div');
+                card.className = 'repo-card';
+                
+                const updatedDate = new Date(repo.updated_at).toLocaleDateString('en-US', {
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric'
+                });
+                
+                card.innerHTML = `
+                    <div class="repo-header">
+                        <i class="fas fa-book"></i>
+                        <h3>${repo.name}</h3>
+                    </div>
+                    <p class="repo-desc">${repo.description || 'No description'}</p>
+                    <div class="repo-stats">
+                        <span class="repo-stat">
+                            <i class="fas fa-star"></i> ${repo.stargazers_count}
+                        </span>
+                        <span class="repo-stat">
+                            <i class="fas fa-code-branch"></i> ${repo.forks_count}
+                        </span>
+                    </div>
+                    <div class="repo-language">
+                        <span class="lang-dot"></span>
+                        ${repo.language || 'Various'}
+                        <span style="margin-left: auto; font-size: 0.85rem;">
+                            <i class="far fa-calendar"></i> ${updatedDate}
+                        </span>
+                    </div>
+                    <a href="${repo.html_url}" target="_blank" class="repo-link">
+                        View <i class="fas fa-arrow-right"></i>
+                    </a>
+                `;
+                
+                repoGrid.appendChild(card);
+            });
+        }
+
+        // Initialize
+        fetchGitHubData();
+        
+        // Refresh every 5 minutes
+        setInterval(fetchGitHubData, 300000);
+    </script>
 </body>
 </html>
